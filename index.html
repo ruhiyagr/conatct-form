@@ -100,116 +100,34 @@
             transform="translate(-142.44419 -149.73493)" fill="#57b894" />
     </svg>
 
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="cursor: pointer;float:  right;">SUBMIT YOUR ENQUIRY</button>
-
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="exampleModalLabel">Exit</h4>
-          </div>
-          <div class="modal-body">
-            <form action="test.php" method="POST" style="  background: #007bffb5;padding: 25px;margin: 50px 0;">
-                <h3>Enquiry Form</h3>
-                  <h4>Contact us today, and get reply with in 24 hours!</h4>
-    <div class="form-group">
-          <label for="recipient-name" class="control-label">Name*:</label>
-              <input type="text" name="name" class="form-control"required>
-    </div>
-
-    <div class="form-group">
-    <label for="recipient-name" class="control-label">Email:</label>
-            <input type="text" name="email" class="form-control">
-    </div>
-
-            <div class="form-group">
-            <label for="recipient-name" class="control-label">Mobile/Telephone No.*:</label>
-             <input type="text" name="phone" class="form-control"required>
-    </div>
-
-            <div class="form-group">
-            <label for="recipient-name" class="control-label">Request Phone Call:</label><br>
-            Yes:<input type="checkbox" value="Yes" name="call" class="form-control">
-            No:<input type="checkbox" value="No" name="call" class="form-control">
-    </div>
-
-            <div class="form-group">
-            <label for="recipient-name" class="control-label">Subjectline:</label>
-            <select name="subjectline" size="1" class="form-control">
-            <option value=" " >Please select your subjectline</option>
-            <option value="visa">Visa Exchange Package</option>
-            <option value="other">Other(Please Specify Other Query Below)</option>
-            </select>
-            </div>
-
-            <div class="form-group">
-            <label for="recipient-name" class="control-label">Visa Exchange Package:</label>
-            <select name="visa" size="1" class="form-control">
-            <option value=" " >Please select your package</option>
-              <option>Airport Visa Change</option>
-              <option> Armenia Visa Change Package</option>
-              <option>Azerbaijan Visa Change Package</option>
-              <option>Kyrgyzstan Visa Change Package</option>
-              <option>Oman Visa Change by Bus</option>
-              <option>Sri Lanka Visa Change Package</option>
-
-
-            </select>
-            </div>
-
-            <div class="form-group">
-            <label for="recipient-name" class="control-label">Other Query: </label>
-    <input type="text" name="other" class="form-control">
-    </div>
-
-            <div class="form-group">
-            <label for="recipient-name" class="control-label">Number Of Guest: </label>
-    <input type="text" name="guest" class="form-control">
-    </div>
-
-            <div class="form-group">
-            <label for="recipient-name" class="control-label">Expected Travel Date:</label>
-    <input type="text" name="date" class="form-control">
-    </div>
-
-            <div class="form-group">
-            <label for="recipient-name" class="control-label">City*: </label>
-    <input type="text" name="city" class="form-control" required >
-    </div>
-
-            <div class="form-group">
-            <label for="recipient-name" class="control-label">Country:</label>
-
-            <select name="state" size="1" class="form-control">
-            <option value=" " >Please select your state</option>
-            <option>Afghanistan</option>
-           
-            <option>Dominican Republic</option>
-        
-            </select>
-
-    </div>
-
-            <div class="form-group">
-            <label for="recipient-name" class="control-label">Message:</label>
-    <textarea name="message" rows="6" cols="25" class="form-control"></textarea>
-
-            <input type="submit" value="Send" class="btn btn-primary">
-            <input type="reset" value="Clear" class="btn btn-default">
-    </div>
-
-              </form>
-              </div>
-
-          </div>
-
+    <form action="contact.php" method="post">
+        <div class="elem-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="visitor_name" placeholder="John Doe" pattern=[A-Z\sa-z]{3,20} required>
         </div>
-      </div>
-
-
-    <?php include 'test.php';?>
+        <div class="elem-group">
+          <label for="email">Your E-mail</label>
+          <input type="email" id="email" name="visitor_email" placeholder="john.doe@email.com" required>
+        </div>
+        <div class="elem-group">
+          <label for="department-selection">Choose Concerned Department</label>
+          <select id="department-selection" name="concerned_department" required>
+              <option value="">Select a Department</option>
+              <option value="billing">Billing</option>
+              <option value="marketing">Marketing</option>
+              <option value="technical support">Technical Support</option>
+          </select>
+        </div>
+        <div class="elem-group">
+          <label for="title">Reason For Contacting Us</label>
+          <input type="text" id="title" name="email_title" required placeholder="Unable to Reset my Password" pattern=[A-Za-z0-9\s]{8,60}>
+        </div>
+        <div class="elem-group">
+          <label for="message">Write your message</label>
+          <textarea id="message" name="visitor_message" placeholder="Say whatever you want." required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
 </body>
 
 </html>
